@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry submited @Bundle-Media</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .parent{
+        width: 50%;
+       border: 1px solid black;
+       margin: auto;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       padding-bottom: 15px;
+    }
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin: 15px auto;
+    }
+    .tableBox{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px 0px;
+    }
+    table,tr,td{
+        border: 1px solid;
+    }
+    td,th{
+        padding: 10px 0px;
+    }
+    td{
+        width: 50%;
+    }
+    tr>td:last-child{
+        padding: 15px;
+    }
+     .horizontal{
+        border-bottom: 1px solid black;
+        width: 100%;
+        height: 1px;
+    }
+ 
+</style>
+<body>
+    <div class="parent">
+        <img src="https://bundle-media.co/public/images/logo.jpg" alt="Bundle-Media">
+        <div class="tableBox">
+        <div class="first-child">
+            <p>Dear Team,</p>
+            <p>You have received a new enquiry with below details.</p>
+        </div>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{fullname}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td>Link your youtube channel:</td>
+                    <td>{{youtubeChannel}}</td>
+                </tr>
+                <tr>
+                    <td>Usual length of the final edited video:</td>
+                    <td>{{videoLength}}</td>
+                </tr>
+                <tr>
+                    <td>A perfect example video which represents the style of editing you are looking for:</td>
+                    <td>{{whatLookingFor}}</td>
+                </tr>
+                <tr>
+                    <td>What is your frequency of uploads in a month:</td>
+                    <td>{{freq}}</td>
+                </tr>
+                <tr>
+                    <td>What is your budget:</td>
+                    <td>{{budget}}</td>
+                </tr>
+                <tr>
+                    <td>Discord ID:</td>
+                    <td>{{discord_id}}</td>
+                </tr>
+                <tr>
+                    <td>Let us know about any other services you are looking for too:</td>
+                    <td>{{information}}</td>
+                </tr>
+            </table>
+        </div>
+         <p>Feel free to reach out to us at info@gent.care for any quries.</p> 
+        <br>
+        <div class="horizontal"></div>
+        <br>
+        <p>Please do not reply to this mail as this is automated mail service</p>
+        <br>
+        <h3>Copyright © Bundle Media. All rights reserved.</h3>
+        <br>
+        <p>This communication is confidential privileged is directed to and for the use of addresse only. The recipient if not the addressee should not use this message if erroneously recieved, and access and use of this mail in any manner by anyone other than the addressee is unauthorised before opening and accessing the attachement if any please check and scan for virus.</p>
+    </div>
+</body>
+</html>
