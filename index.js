@@ -1,15 +1,15 @@
 const express = require("express");
-const path = require('path')
+ const path = require('path')
 const nodemailer = require('nodemailer');
 const cors = require("cors");
 const hbs = require('nodemailer-express-handlebars');
 require("dotenv").config();
 
-const PORT  = 8080;
+const PORT  = process.env.PORT || 8080;
 
 const app = express();
 
-app.use(cors())
+ app.use(cors())
 app.use(express.json())
 
 
@@ -20,10 +20,11 @@ app.get('/', (req, res) => {
 
 
 // send mail to bundle-media route
+
 app.post("/sendmail",(req,res)=>{
     const data = req.body;
     const {fullname,email,youtubeChannel,videoLength,niche,whatLookingFor,freq,budget,discord_id,information} = data;
-    if(!fullname,!email,!youtubeChannel,!videoLength,!niche,!whatLookingFor,!freq,!budget,!discord_id,!information)
+    if(!fullname ||!email ||!youtubeChannel || !videoLength ||!niche || !whatLookingFor || !freq ||!budget || !discord_id || !information)
        {
         return res.status(400).send("All fields are required!")
        }
@@ -52,7 +53,7 @@ app.post("/sendmail",(req,res)=>{
 
     var mailOptions = {
         from: `${process.env.USER}`,
-        to:["sahnawazhussain852@gmail.com","tech@bundle-media.co"],
+        to:[process.env.SEND_TO,`${data.email}`,"tech@bundle-media.co"],
         subject: `Enquiry submited @Bundle-Media`,
         template: 'email',
         context: {
